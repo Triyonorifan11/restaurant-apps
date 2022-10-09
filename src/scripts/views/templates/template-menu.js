@@ -58,7 +58,7 @@ const likeedButton = () => `
 `;
 
 const addReviewerButton = () => `
-    <a href="#/addReview" class="btn btn-info">Add Review</a>
+    <a href="#/addreview" class="btn btn-info">Add Review</a>
 `;
 export {
   createMenuTemplate,

@@ -36,7 +36,6 @@ const detailMenu = {
     const drinks = document.querySelector('#drink');
     const reviewer = document.querySelector('#customerReview');
     const detailMenuId = document.querySelector('#resto-list');
-    // const buttonlike = document.querySelector('.buttonFavorite');
     const buttonReview = document.querySelector('#reviewerButton');
 
     detailMenuId.innerHTML = createmenuDetailTemplate(menuDetailIdAPI);
@@ -47,8 +46,9 @@ const detailMenu = {
         id: menuDetailIdAPI.id,
         name: menuDetailIdAPI.name,
         city: menuDetailIdAPI.city,
-        address: menuDetailIdAPI.address,
+        pictureId: menuDetailIdAPI.pictureId,
         rating: menuDetailIdAPI.rating,
+        description: menuDetailIdAPI.description,
       },
     });
 
