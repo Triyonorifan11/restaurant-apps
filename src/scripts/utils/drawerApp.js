@@ -5,18 +5,18 @@ const drawerApp = {
     });
 
     content.addEventListener('click', (event) => {
-      this._toggleDrawerApp(event, drawer);
+      this._closeDrawerApp(event, drawer);
     });
   },
 
   _toggleDrawerApp(event, drawer) {
     event.stopPropagation();
-    drawer.classList.toggle('open');
+    drawer.classList.toggle('open-navbar');
   },
 
   _closeDrawerApp(event, drawer) {
     event.stopPropagation();
-    drawer.classList.remove('open');
+    drawer.classList.remove('open-navbar');
   },
 };
 
