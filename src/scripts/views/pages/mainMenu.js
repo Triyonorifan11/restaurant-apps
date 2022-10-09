@@ -1,4 +1,5 @@
 import RestoResouce from '../../data/resto-api';
+import { createMenuTemplate } from '../templates/template-menu';
 
 const mainMenu = {
   async render() {
@@ -6,8 +7,8 @@ const mainMenu = {
     
         <section class="resto-content">
             <div class="daftar-menu">
-                <h2 class="label-menu">Main Menu List</h2>
-                <div class="post-menu" id="menu-list"></div>
+                <h2 class="label-menu">Resto Pixel's List</h2>
+                <div class="post-menu" id="resto-list"></div>
             </div>
         </section>
     
@@ -16,7 +17,10 @@ const mainMenu = {
 
   async afterRender() {
     const menuResto = await RestoResouce.mainMenu();
-    console.log(menuResto);
+    const menuList = document.querySelector('#resto-list');
+    menuResto.forEach((menu) => {
+      menuList.innerHTML += createMenuTemplate(menu);
+    });
   },
 };
 

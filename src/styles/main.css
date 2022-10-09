@@ -205,6 +205,15 @@ main {
   color: #999;
 }
 
+button{
+  border: 0;
+  background-color: inherit;
+}
+
+button:focus{
+  background-color: inherit;
+}
+
 .btn {
   text-decoration: none;
   color: white;

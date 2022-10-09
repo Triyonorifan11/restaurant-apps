@@ -9,7 +9,8 @@ class RestoResouce {
 
   static async detailMenu(id) {
     const responseAPI = await fetch(API_ENDPOINT.DETAIL_MENU(id));
-    return responseAPI.json();
+    const responseJSON = await responseAPI.json();
+    return responseJSON.restaurant;
   }
 }
 

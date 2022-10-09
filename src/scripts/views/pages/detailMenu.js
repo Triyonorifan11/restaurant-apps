@@ -1,17 +1,24 @@
 import UrlParser from '../../routes/url-parser';
 import RestoResouce from '../../data/resto-api';
+import { createmenuDetailTemplate } from '../templates/template-menu';
 
 const detailMenu = {
   async render() {
     return `
-          <h2>Detail Menu Restaurant</h2>
+        <section class="resto-content">
+            <div class="daftar-menu">
+                <h2 class="label-menu">Detail Resto Pixel's</h2>
+                <div class="post-menu" id="resto-list"></div>
+            </div>
+        </section>
       `;
   },
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const menuDetailId = await RestoResouce.detailMenu(url.id);
-    console.log(menuDetailId);
+    const menuDetailIdAPI = await RestoResouce.detailMenu(url.id);
+    const detailMenuId = document.querySelector('#resto-list');
+    detailMenuId.innerHTML = createmenuDetailTemplate(menuDetailIdAPI);
   },
 };
 
