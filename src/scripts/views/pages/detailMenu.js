@@ -1,8 +1,9 @@
 import UrlParser from '../../routes/url-parser';
 import RestoResouce from '../../data/resto-api';
 import {
-  createmenuDetailTemplate, likeButton, menuOfRestoDetail, curtomerReview, addReviewerButton,
+  createmenuDetailTemplate, menuOfRestoDetail, curtomerReview, addReviewerButton,
 } from '../templates/template-menu';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const detailMenu = {
   async render() {
@@ -35,11 +36,21 @@ const detailMenu = {
     const drinks = document.querySelector('#drink');
     const reviewer = document.querySelector('#customerReview');
     const detailMenuId = document.querySelector('#resto-list');
-    const buttonlike = document.querySelector('.buttonFavorite');
+    // const buttonlike = document.querySelector('.buttonFavorite');
     const buttonReview = document.querySelector('#reviewerButton');
 
     detailMenuId.innerHTML = createmenuDetailTemplate(menuDetailIdAPI);
-    buttonlike.innerHTML = likeButton();
+
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('.buttonFavorite'),
+      resto: {
+        id: menuDetailIdAPI.id,
+        name: menuDetailIdAPI.name,
+        city: menuDetailIdAPI.city,
+        address: menuDetailIdAPI.address,
+        rating: menuDetailIdAPI.rating,
+      },
+    });
 
     foodOfRestoDetails.forEach((foods) => {
       foodsRestoDetail.innerHTML += menuOfRestoDetail(foods);

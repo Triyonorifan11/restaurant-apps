@@ -49,7 +49,7 @@ const likeButton = () => `
     </button>
 `;
 
-const unlikeButton = () => `
+const likeedButton = () => `
 
     <button aria-label="unlike this movie" id="likeButton" class="favoriteRestoButton">
         <i class="bi bi-chat-heart-fill"></i>
@@ -63,7 +63,8 @@ const addReviewerButton = () => `
 export {
   createMenuTemplate,
   createmenuDetailTemplate,
-  likeButton, unlikeButton,
+  likeButton,
+  likeedButton,
   menuOfRestoDetail,
   curtomerReview,
   addReviewerButton,
