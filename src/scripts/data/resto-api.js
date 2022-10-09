@@ -12,6 +12,24 @@ class RestoResouce {
     const responseJSON = await responseAPI.json();
     return responseJSON.restaurant;
   }
+
+  static async foodOfResto(id) {
+    const responseAPI = await fetch(API_ENDPOINT.DETAIL_MENU(id));
+    const responseJSON = await responseAPI.json();
+    return responseJSON.restaurant.menus.foods;
+  }
+
+  static async drinkOfResto(id) {
+    const responseAPI = await fetch(API_ENDPOINT.DETAIL_MENU(id));
+    const responseJSON = await responseAPI.json();
+    return responseJSON.restaurant.menus.drinks;
+  }
+
+  static async customerReviewsResto(id) {
+    const responseAPI = await fetch(API_ENDPOINT.DETAIL_MENU(id));
+    const responseJSON = await responseAPI.json();
+    return responseJSON.restaurant.customerReviews;
+  }
 }
 
 export default RestoResouce;

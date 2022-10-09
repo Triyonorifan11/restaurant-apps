@@ -3,6 +3,16 @@
     grid-row-gap: 25px;
 }
 
+.post-menu-detail{
+    display: grid;
+    grid-row-gap: 25px;
+}
+
+.card{
+    display: grid;
+    grid-row-gap: 25px;
+}
+
 /* media screen small */
 @media screen and (min-width: 576px) {
     .header-nav {
@@ -79,6 +89,20 @@
         grid-row-gap: 30px;
     }
 
+    .post-menu-detail{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
+
+    .card{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
+
     .navbar-list {
         max-width: 800px;
         margin: 0 auto;
@@ -96,6 +120,25 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
+
+    .post-menu-detail{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
+
+    .card{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+    }
+    
+    .favoriteRestoButton{
+        bottom: 55px;
+        right: 55px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -105,5 +148,17 @@
 
     .img-jumbotron {
         min-width: 1000px;
+    }
+
+    .favoriteRestoButton{
+        bottom: 85px;
+        right: 85px;
+    }
+
+    .card{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
     }
 }
