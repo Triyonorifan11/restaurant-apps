@@ -1,0 +1,18 @@
+{
+    "id": "pixels-resto-pwa-1",
+    "start_url": "./index.html",
+    "name": "Resto Pixels App",
+    "short_name": "Pixels App",
+    "description": "Restaurant App By Pixel",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#D84315",
+    "icons": [
+      {
+        "src": "/images/icon/icon.png",
+        "sizes": "1000x1000",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ]
+  }
