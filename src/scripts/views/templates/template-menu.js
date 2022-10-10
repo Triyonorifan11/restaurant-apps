@@ -57,9 +57,26 @@ const likeedButton = () => `
 
 `;
 
-const addReviewerButton = () => `
-    <a href="#/addreview" class="btn btn-info">Add Review</a>
+const addReviewerButton = (resto) => `
+    <a href="#/addreview/${resto.id}" class="btn btn-info">Add Review</a>
 `;
+
+const formInputReviewer = () => `
+    <div class="card-body">
+        <div class="form-group">
+            <label for="nama-reviewer" class="form-label">Nama</label>
+            <input id="nama-reviewer" type="text" class="form-control" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+            <label for="review-text" class="form-label">Review</label>
+            <textarea name="review-text" id="review-text" rows="4" class="form-control" required placeholder="Add review"></textarea>
+        </div>
+        <div class="form-group">
+            <button id="buttonSave" class="btn btn-info">Add Review</button>
+        </div>
+    </div>
+`;
+
 export {
   createMenuTemplate,
   createmenuDetailTemplate,
@@ -68,4 +85,5 @@ export {
   menuOfRestoDetail,
   curtomerReview,
   addReviewerButton,
+  formInputReviewer,
 };

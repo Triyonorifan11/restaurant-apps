@@ -8,7 +8,7 @@ const routes = {
   '/favorite': favoriteMenu,
   '/mainMenu': mainMenu,
   '/detail/:id': detailMenu,
-  '/addreview': addreviewFromReviewer,
+  '/addreview/:id': addreviewFromReviewer,
 };
 
 export default routes;

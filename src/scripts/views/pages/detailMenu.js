@@ -64,7 +64,7 @@ const detailMenu = {
       reviewer.innerHTML += curtomerReview(review);
     });
 
-    buttonReview.innerHTML = addReviewerButton();
+    buttonReview.innerHTML = addReviewerButton(menuDetailIdAPI);
   },
 };
 

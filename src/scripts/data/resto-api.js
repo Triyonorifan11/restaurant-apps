@@ -30,6 +30,11 @@ class RestoResouce {
     const responseJSON = await responseAPI.json();
     return responseJSON.restaurant.customerReviews;
   }
-}
 
+  static async postReviewer(option) {
+    const responseAPI = await fetch(API_ENDPOINT.ADD_REVIEW, option);
+    const responseJSON = await responseAPI.json();
+    return responseJSON.message;
+  }
+}
 export default RestoResouce;
