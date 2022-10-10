@@ -1,7 +1,7 @@
 import CONFIG from '../../globals/config';
 
 const createMenuTemplate = (resto) => `
-    <article class="post-item">
+    <article class="post-item" tabindex="0">
         <img class="post-item-thumbnail" src="${CONFIG.BASE_IMG_URL + resto.pictureId}" alt="${resto.name}">
         <span class="bedge-city">${resto.city}</span>
         <div class="post-item-content">
@@ -15,7 +15,7 @@ const createMenuTemplate = (resto) => `
 
 const createmenuDetailTemplate = (resto) => `
 
-    <article class="post-item">
+    <article class="post-item" tabindex="0">
         <img class="post-item-thumbnail" src="${CONFIG.BASE_IMG_URL + resto.pictureId}" alt="${resto.name}">
         <span class="bedge-city">${resto.city} </span>
         <div class="post-item-content">

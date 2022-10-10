@@ -28,7 +28,7 @@ body {
   top: -45px;
   left: 0;
   padding: 8px;
-  background-color: #f8f520;
+  background-color: #f8f520 !important;
   color: inherit;
   z-index: 100;
   text-decoration: none;
@@ -319,7 +319,7 @@ button:focus{
 
 .form-control{
   width: 100%;
-  padding: 0.5rem;
+  padding: 1.3rem;
   margin-top: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
@@ -330,8 +330,9 @@ button:focus{
   outline: 0;
 }
 
-input::placeholder, textarea::placeholder{
+input::placeholder, textarea::placeholder, input, textarea{
   font-family: 'Poppins', sans-serif;
+  font-size: 15px;
 }
 
 .form-label{
