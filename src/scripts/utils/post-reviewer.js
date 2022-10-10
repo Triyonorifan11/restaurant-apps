@@ -47,6 +47,7 @@ const postReviewer = {
         this.updateReviewerInput(id);
       }
       window.location.href = `#/detail/${id}`;
+      window.location.reload(true);
     } catch (error) {
       alert(error);
     }

@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import 'regenerator-runtime';
 import DrawerApp from '../utils/drawerApp';
 import UrlParser from '../routes/url-parser';
@@ -20,11 +21,31 @@ class App {
     });
   }
 
+  _pageloaderActive() {
+    const loader = document.querySelector('#loading');
+    loader.classList.add('display');
+    setTimeout(() => {
+      loader.classList.remove('display');
+    }, 5000);
+  }
+
+  _pageloaderHide() {
+    const loader = document.querySelector('#loading');
+    loader.classList.remove('display');
+  }
+
   async renderPageApp() {
-    const url = UrlParser.parseActiveUrlWithCombiner();
-    const page = routes[url];
-    this._content.innerHTML = await page.render();
-    await page.afterRender();
+    this._pageloaderActive();
+    try {
+      const url = UrlParser.parseActiveUrlWithCombiner();
+      const page = routes[url];
+      this._content.innerHTML = await page.render();
+      await page.afterRender();
+    } catch (error) {
+      this._content.innerHTML = `<h1>${error}</h1>`;
+    } finally {
+      this._pageloaderHide();
+    }
   }
 }
 

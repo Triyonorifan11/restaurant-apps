@@ -3,6 +3,7 @@ import '../styles/main.css';
 import '../styles/responsive.css';
 import App from './views/app';
 import swRegister from './utils/sw-register';
+import './utils/loader-element';
 
 const humbergerButton = document.querySelector('#humberger');
 const maincontent = document.querySelector('main');
