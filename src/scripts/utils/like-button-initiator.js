@@ -1,7 +1,7 @@
 import favoriteRestoPixels from '../data/favorite-restoPixel';
-import { likeButton, likeedButton } from '../views/templates/template-menu';
+import { createLikeRestoButtonTemplate, createUnlikeRestoButtonTemplate } from '../views/templates/template-menu';
 
-const LikeButtonInitiator = {
+const LikeButtonPresenter = {
   async init({ likeButtonContainer, resto }) {
     this._likeButtonContainer = likeButtonContainer;
     this._resto = resto;
@@ -25,7 +25,7 @@ const LikeButtonInitiator = {
   },
 
   _renderLike() {
-    this._likeButtonContainer.innerHTML = likeButton();
+    this._likeButtonContainer.innerHTML = createLikeRestoButtonTemplate();
     const Buttonlike = document.querySelector('#likeButton');
     Buttonlike.addEventListener('click', async () => {
       await favoriteRestoPixels.putRestoDB(this._resto);
@@ -34,7 +34,7 @@ const LikeButtonInitiator = {
   },
 
   _renderLiked() {
-    this._likeButtonContainer.innerHTML = likeedButton();
+    this._likeButtonContainer.innerHTML = createUnlikeRestoButtonTemplate();
 
     const Buttonlike = document.querySelector('#likeButton');
     Buttonlike.addEventListener('click', async () => {
@@ -44,4 +44,4 @@ const LikeButtonInitiator = {
   },
 };
 
-export default LikeButtonInitiator;
+export default LikeButtonPresenter;

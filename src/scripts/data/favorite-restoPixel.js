@@ -11,6 +11,9 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
 
 const favoriteRestoPixels = {
   async getRestoDB_Id(id) {
+    if (!id) {
+      return;
+    }
     return (await dbPromise).get(OBJEK_STORE_NAME, id);
   },
 
@@ -19,6 +22,9 @@ const favoriteRestoPixels = {
   },
 
   async putRestoDB(resto) {
+    if (!resto.hasOwnProperty('id')) {
+      return;
+    }
     return (await dbPromise).put(OBJEK_STORE_NAME, resto);
   },
 

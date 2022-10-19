@@ -43,15 +43,15 @@ const curtomerReview = (customer) => `
     </div>
 `;
 
-const likeButton = () => `
-    <button aria-label="like this movie" id="likeButton" class="favoriteRestoButton">
+const createLikeRestoButtonTemplate = () => `
+    <button aria-label="like this resto" id="likeButton" class="favoriteRestoButton">
         <i class="bi bi-chat-heart"></i>
     </button>
 `;
 
-const likeedButton = () => `
+const createUnlikeRestoButtonTemplate = () => `
 
-    <button aria-label="unlike this movie" id="likeButton" class="favoriteRestoButton">
+    <button aria-label="unlike this resto" id="likeButton" class="favoriteRestoButton">
         <i class="bi bi-chat-heart-fill"></i>
     </button>
 
@@ -80,8 +80,8 @@ const formInputReviewer = () => `
 export {
   createMenuTemplate,
   createmenuDetailTemplate,
-  likeButton,
-  likeedButton,
+  createLikeRestoButtonTemplate,
+  createUnlikeRestoButtonTemplate,
   menuOfRestoDetail,
   curtomerReview,
   addReviewerButton,
