@@ -1,10 +1,10 @@
-import favoriteRestoPixels from '../data/favorite-restoPixel';
 import { createLikeRestoButtonTemplate, createUnlikeRestoButtonTemplate } from '../views/templates/template-menu';
 
 const LikeButtonPresenter = {
-  async init({ likeButtonContainer, resto }) {
+  async init({ likeButtonContainer, favoriteRestoes, resto }) {
     this._likeButtonContainer = likeButtonContainer;
     this._resto = resto;
+    this._favoriteResto = favoriteRestoes;
 
     await this._renderButton();
   },
@@ -20,15 +20,15 @@ const LikeButtonPresenter = {
   },
 
   async _isRestoExist(id) {
-    const movie = await favoriteRestoPixels.getRestoDB_Id(id);
-    return !!movie;
+    const resto = await this._favoriteResto.getRestoDB_Id(id);
+    return !!resto;
   },
 
   _renderLike() {
     this._likeButtonContainer.innerHTML = createLikeRestoButtonTemplate();
     const Buttonlike = document.querySelector('#likeButton');
     Buttonlike.addEventListener('click', async () => {
-      await favoriteRestoPixels.putRestoDB(this._resto);
+      await this._favoriteResto.putRestoDB(this._resto);
       this._renderButton();
     });
   },
@@ -38,7 +38,7 @@ const LikeButtonPresenter = {
 
     const Buttonlike = document.querySelector('#likeButton');
     Buttonlike.addEventListener('click', async () => {
-      await favoriteRestoPixels.deleteRestoById(this._resto.id);
+      await this._favoriteResto.deleteRestoById(this._resto.id);
       this._renderButton();
     });
   },

@@ -3,7 +3,8 @@ import RestoResouce from '../../data/resto-api';
 import {
   createmenuDetailTemplate, menuOfRestoDetail, curtomerReview, addReviewerButton,
 } from '../templates/template-menu';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonInitiator from '../../utils/like-button-presenter';
+import favoriteRestoPixels from '../../data/favorite-restoPixel';
 
 const detailMenu = {
   async render() {
@@ -42,6 +43,7 @@ const detailMenu = {
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('.buttonFavorite'),
+      favoriteRestoes: favoriteRestoPixels,
       resto: {
         id: menuDetailIdAPI.id,
         name: menuDetailIdAPI.name,
