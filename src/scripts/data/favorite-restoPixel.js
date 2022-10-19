@@ -31,6 +31,16 @@ const favoriteRestoPixels = {
   async deleteRestoById(id) {
     return (await dbPromise).delete(OBJEK_STORE_NAME, id);
   },
+
+  async searchResto(query) {
+    return (await this.getAllRestoDB()).filter((resto) => {
+      const loweredCaseMovieTitle = (resto.title || '-').toLowerCase();
+      const jammedMovieTitle = loweredCaseMovieTitle.replace(/\s/g, '');
+      const loweredCaseQuery = query.toLowerCase();
+      const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
+      return jammedMovieTitle.indexOf(jammedQuery) !== -1;
+    });
+  },
 };
 
 export default favoriteRestoPixels;

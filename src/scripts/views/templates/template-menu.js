@@ -2,12 +2,12 @@ import CONFIG from '../../globals/config';
 
 const createMenuTemplate = (resto) => `
     <article class="post-item" tabindex="0">
-        <img class="post-item-thumbnail" src="${CONFIG.BASE_IMG_URL + resto.pictureId}" alt="${resto.name}">
-        <span class="bedge-city">${resto.city}</span>
+        <img class="post-item-thumbnail" src="${CONFIG.BASE_IMG_URL + resto.pictureId}" alt="${resto.name || '-'}">
+        <span class="bedge-city">${resto.city || '-'}</span>
         <div class="post-item-content">
-            <p class="post-item-date-author">⭐️ Rating ${resto.rating}</p>
-            <h1 class="post-item-title">${resto.name}</h1>
-            <p class="post-item-description">${resto.description}</p>
+            <p class="post-item-date-author">⭐️ Rating ${resto.rating || '-'}</p>
+            <h1 class="post-item-title">${resto.name || '-'}</h1>
+            <p class="post-item-description">${resto.description || '-'}</p>
             <a href="#/detail/${resto.id}" class="btn btn-info">Detail</a>
         </div>
     </article>
@@ -16,17 +16,17 @@ const createMenuTemplate = (resto) => `
 const createmenuDetailTemplate = (resto) => `
 
     <article class="post-item" tabindex="0">
-        <img class="post-item-thumbnail" src="${CONFIG.BASE_IMG_URL + resto.pictureId}" alt="${resto.name}">
-        <span class="bedge-city">${resto.city} </span>
+        <img class="post-item-thumbnail" src="${CONFIG.BASE_IMG_URL + resto.pictureId || '-'}" alt="${resto.name || '-'}">
+        <span class="bedge-city">${resto.city || '-'} </span>
         <div class="post-item-content">
-            <p class="post-item-date-author">⭐️ Rating ${resto.rating}</p>
-            <h1 class="post-item-title">${resto.name}</h1>
-            <p>Address: ${resto.address}</p>
+            <p class="post-item-date-author">⭐️ Rating ${resto.rating || '-'}</p>
+            <h1 class="post-item-title">${resto.name || '-'}</h1>
+            <p>Address: ${resto.address || '-'}</p>
         </div>
     </article>
     <div class"detail">
         <h2>Dskription</h2>
-        <p class="post-item-description">${resto.description}</p>
+        <p class="post-item-description">${resto.description || '-'}</p>
     </div>
 
 `;

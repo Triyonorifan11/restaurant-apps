@@ -35,6 +35,16 @@ const FavoriteMovieArray = {
     // kecuali film dengan id == id
     favoriteResto = favoriteResto.filter((resto) => resto.id != id);
   },
+
+  searchResto(query) {
+    return (this.getAllRestoDB()).filter((resto) => {
+      const loweredCaseMovieTitle = (resto.name || '-').toLowerCase();
+      const jammedMovieTitle = loweredCaseMovieTitle.replace(/\s/g, '');
+      const loweredCaseQuery = query.toLowerCase();
+      const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
+      return jammedMovieTitle.indexOf(jammedQuery) !== -1;
+    });
+  },
 };
 
 describe('Favorite resto Array Contract Test Implementation', () => {
