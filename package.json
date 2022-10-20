@@ -7,7 +7,8 @@
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
-    "serve": "http-server dist"
+    "serve": "http-server dist",
+    "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
   "author": "Triyono Rifan <f296x0756@dicoding.org>",

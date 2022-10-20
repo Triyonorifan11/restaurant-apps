@@ -34,7 +34,7 @@ class FavoriteRestoSearchView {
   }
 
   _getEmptyMovieTemplate() {
-    return '<div class="restoes-not-found">Tidak ada film untuk ditampilkan</div>';
+    return '<div class="restoes-not-found">There are no restaurants to show</div>';
   }
 }
 export default FavoriteRestoSearchView;
