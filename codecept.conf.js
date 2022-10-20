@@ -12,13 +12,13 @@ exports.config = {
   output: 'e2e/outputs',
   helpers: {
     Puppeteer: {
-      url: 'http://127.0.0.1:8000',
+      url: 'http://127.0.0.1:3030',
       show: true,
-      windowSize: '1200x900'
-    }
+      windowSize: '1200x900',
+    },
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
   },
-  name: 'restaurant-apps'
-}
+  name: 'restaurant-apps',
+};

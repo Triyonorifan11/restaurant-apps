@@ -46,8 +46,8 @@ describe('Searching resto', () => {
     });
 
     it('should show the resto found by Favorite Resto', (done) => {
-      document.getElementById('resto-search-container')
-        .addEventListener('resto:searched:updated', () => {
+      document.getElementById('resto-list')
+        .addEventListener('resto:updated', () => {
           expect(document.querySelectorAll('.post-item').length).toEqual(3);
           done();
         });
@@ -61,7 +61,7 @@ describe('Searching resto', () => {
     });
 
     it('should show the name of the resto found by Favorite Restoes', (done) => {
-      document.getElementById('resto-search-container').addEventListener('resto:searched:updated', () => {
+      document.getElementById('resto-list').addEventListener('resto:updated', () => {
         const restoTitles = document.querySelectorAll('.post-item-title');
         expect(restoTitles.item(0).textContent).toEqual('resto abc');
         expect(restoTitles.item(1).textContent).toEqual('ada juga resto abcde');
@@ -80,7 +80,7 @@ describe('Searching resto', () => {
     });
 
     it('should show - when the resto returned does not contain a title', (done) => {
-      document.getElementById('resto-search-container').addEventListener('resto:searched:updated', () => {
+      document.getElementById('resto-list').addEventListener('resto:updated', () => {
         const restoTitles = document.querySelectorAll('.post-item-title');
         expect(restoTitles.item(0).textContent).toEqual('-');
 
@@ -119,8 +119,8 @@ describe('Searching resto', () => {
 
   describe('When no favorite movies could be found', () => {
     it('should show the empty message', (done) => {
-      document.getElementById('resto-search-container')
-        .addEventListener('resto:searched:updated', () => {
+      document.getElementById('resto-list')
+        .addEventListener('resto:updated', () => {
           expect(document.querySelectorAll('.restoes-not-found').length).toEqual(1);
           done();
         });
@@ -131,7 +131,7 @@ describe('Searching resto', () => {
     });
 
     it('should not show any resto', (done) => {
-      document.getElementById('resto-search-container').addEventListener('resto:searched:updated', () => {
+      document.getElementById('resto-list').addEventListener('resto:updated', () => {
         expect(document.querySelectorAll('.resto').length).toEqual(0);
         done();
       });

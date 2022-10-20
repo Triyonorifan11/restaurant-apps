@@ -335,6 +335,13 @@ input::placeholder, textarea::placeholder, input, textarea{
   font-size: 15px;
 }
 
+.restoes-not-found{
+  font-size: 20px;
+  color: #0e82c5;
+  border-bottom: 3px solid #0e82c5;
+  text-align: center;
+}
+
 .form-label{
   font-size: 1.1rem;
 }

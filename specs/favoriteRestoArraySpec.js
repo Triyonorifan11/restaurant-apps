@@ -4,7 +4,7 @@ import { itActsAsFavoriteRestoModel } from './contract/favoriteRestoContract';
 
 let favoriteResto = [];
 
-const FavoriteMovieArray = {
+const FavoriteRestoArray = {
   getRestoDB_Id(id) {
     if (!id) {
       return;
@@ -50,5 +50,5 @@ const FavoriteMovieArray = {
 describe('Favorite resto Array Contract Test Implementation', () => {
   afterEach(() => favoriteResto = []);
 
-  itActsAsFavoriteRestoModel(FavoriteMovieArray);
+  itActsAsFavoriteRestoModel(FavoriteRestoArray);
 });

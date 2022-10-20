@@ -34,7 +34,7 @@ const favoriteRestoPixels = {
 
   async searchResto(query) {
     return (await this.getAllRestoDB()).filter((resto) => {
-      const loweredCaseMovieTitle = (resto.title || '-').toLowerCase();
+      const loweredCaseMovieTitle = (resto.name || '-').toLowerCase();
       const jammedMovieTitle = loweredCaseMovieTitle.replace(/\s/g, '');
       const loweredCaseQuery = query.toLowerCase();
       const jammedQuery = loweredCaseQuery.replace(/\s/g, '');

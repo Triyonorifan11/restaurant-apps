@@ -1,27 +1,18 @@
 import favoriteRestoPixels from '../../data/favorite-restoPixel';
-import { createMenuTemplate } from '../templates/template-menu';
+import FavoriteRestoSearchPresenter from './liked-resto/favorite-resto-search-presenter';
+import FavoriteRestoSearchView from './liked-resto/favorite-resto-search-view';
+import FavoriteRestoShowPresenter from './liked-resto/favorite-resto-show-presenter';
+
+const view = new FavoriteRestoSearchView();
 
 const LikeFavoriteResto = {
   async render() {
-    return `
-    
-    <section class="resto-content">
-        <div class="daftar-menu">
-            <h2 class="label-menu">Your Favorite Resto Here</h2>
-            <div class="post-menu" id="resto-list"></div>
-        </div>
-    </section>
-
-`;
+    return view.getTemplate();
   },
 
   async afterRender() {
-    const getAllRestoIDB = await favoriteRestoPixels.getAllRestoDB();
-    const listRestoFavoContainer = document.querySelector('#resto-list');
-
-    getAllRestoIDB.forEach((resto) => {
-      listRestoFavoContainer.innerHTML += createMenuTemplate(resto);
-    });
+    new FavoriteRestoShowPresenter({ view, favoriteResto: favoriteRestoPixels });
+    new FavoriteRestoSearchPresenter({ view, favoriteResto: favoriteRestoPixels });
   },
 };
 
