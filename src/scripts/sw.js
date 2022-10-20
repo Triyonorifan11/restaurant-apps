@@ -5,6 +5,7 @@ import CacheHelper from './utils/cache-helper';
 const assetsToCache = [
   './',
   './images/icon/icon.png',
+  './images/icon/icon192.png',
   './images/heros/hero-images_1.jpg',
   './index.html',
   './favicon.png',

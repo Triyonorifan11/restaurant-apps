@@ -7,7 +7,7 @@ class FavoriteRestoSearchView {
         <div class="daftar-menu">
             <h2 class="label-menu">Your Favorite Resto Here</h2>
             <div class="form-group">
-              <label for="nama-reviewer" class="form-label">Search Favorite Resto</label>
+              <label for="query" class="form-label">Search Favorite Resto</label>
               <input id="query" class="form-control" type="text">
             </div>
             <div class="post-menu" id="resto-list"></div>
