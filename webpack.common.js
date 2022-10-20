@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
-const ImageminPngQuant = require('imagemin-pngquant');
 
 module.exports = {
   entry: {
@@ -52,10 +51,6 @@ module.exports = {
     new ImageminWebpackPlugin({
       plugins: [
         ImageminMozjpeg({
-          quality: 50,
-          progressive: true,
-        }),
-        ImageminPngQuant({
           quality: 50,
           progressive: true,
         }),
