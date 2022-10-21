@@ -1,8 +1,10 @@
 import CONFIG from '../../globals/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const createMenuTemplate = (resto) => `
     <article class="post-item" tabindex="0">
-        <img class="post-item-thumbnail" src="${CONFIG.BASE_IMG_URL + resto.pictureId}" alt="${resto.name || '-'}">
+        <img class="post-item-thumbnail lazyload" data-src="${CONFIG.BASE_IMG_URL + resto.pictureId}" alt="${resto.name || '-'}">
         <span class="bedge-city">${resto.city || '-'}</span>
         <div class="post-item-content">
             <p class="post-item-date-author">⭐️ Rating ${resto.rating || '-'}</p>
@@ -16,7 +18,7 @@ const createMenuTemplate = (resto) => `
 const createmenuDetailTemplate = (resto) => `
 
     <article class="post-item" tabindex="0">
-        <img class="post-item-thumbnail" src="${CONFIG.BASE_IMG_URL + resto.pictureId || '-'}" alt="${resto.name || '-'}">
+        <img class="post-item-thumbnail lazyload" data-src="${CONFIG.BASE_IMG_URL + resto.pictureId || '-'}" alt="${resto.name || '-'}">
         <span class="bedge-city">${resto.city || '-'} </span>
         <div class="post-item-content">
             <p class="post-item-date-author">⭐️ Rating ${resto.rating || '-'}</p>
